@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Basit Rulet Oyunu</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+	<form id="startForm">
+        <div class="form-group">
+          <label for="startingBalance">Başlangıç Bakiyesi:</label>
+          <input type="number" class="form-control" id="startingBalance" placeholder="Başlangıç Bakiyesini Girin">
+        </div>
+        <button type="submit" class="btn btn-primary">Oyuna Başla</button>
+      </form>
+      <!-- Rulet Çarkı ve Kazanan Numara Bölgesi -->
+      <div class="roulette-container">
+        <div class="roulette-wheel mx-auto mb-4">
+          <img id="wheel" src="roulette-wheel.png" alt="Rulet Çarkı" class="img-fluid">
+          <div id="winningNumber" class="winning-number"></div>
+		   <div id="result" class="result"></div> <!-- Kazanma / Kaybetme sonucunu gösterecek div -->
+        </div>
+      </div>
+
+      <!-- Rulet Masa Bölgesi -->
+      <table id="roulette-table" class="table table-bordered text-center mx-auto mb-4">
+        <tr>
+          <th class="static">0</th>
+          <th class="static">3</th><th class="static">6</th><th class="static">9</th><th class="static">12</th><th class="static">15</th><th class="static">18</th>
+          <th class="static">21</th><th class="static">24</th><th class="static">27</th><th class="static">30</th><th class="static">33</th><th class="static">36</th>
+        </tr>
+        <tr>
+          <th class="static">2</th><th class="static">5</th><th class="static">8</th><th class="static">11</th><th class="static">14</th><th class="static">17</th>
+          <th class="static">20</th><th class="static">23</th><th class="static">26</th><th class="static">29</th><th class="static">32</th><th class="static">35</th><td class="static" colspan="2">...</td>
+        </tr>
+        <tr>
+          <th class="static">1</th><th class="static">4</th><th class="static">7</th><th class="static">10</th><th class="static">13</th><th class="static">16</th>
+          <th class="static">19</th><th class="static">22</th><th class="static">25</th><th class="static">28</th><th class="static">31</th><th class="static">34</th><td class="static" colspan="2">...</td>
+        </tr>
+      </table>
+
+      <!-- Bahis Alanı -->
+      <div class="betting-area mb-4">
+        <input type="number" id="betAmount" class="form-control mb-2" placeholder="Bahis Miktarı">
+        <button id="spinButton" class="btn btn-primary btn-block">Çarkı Döndür</button>
+      </div>
+
+      <!-- Chip Görselleri -->
+      <div class="chips mb-4">
+       
+        <img class="chip" src="chip20.png" alt="20">
+        <img class="chip" src="chip50.png" alt="50">
+        <img class="chip" src="chip100.png" alt="100">
+      </div>
+
+      <!-- Bakiye -->
+       <p id="balance" class="mb-0">Bakiye: 0</p>
+      <!-- Kazanç -->
+      <p id="winnings" class="mb-0">Kazanç: 0</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
